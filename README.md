@@ -45,7 +45,7 @@ Dataset 1             |  Dataset 2
 The estimations, ground truth values and NIS values from the UKF are output into csv files located [here](https://github.com/shazraz/Unscented-Kalman-Filter/tree/master/output) for both datasets. The NIS values are visualized below for the selected std_a = 1 m/s^2 and std_yawdd = 0.3 rad/s^2. This choice of values results in 90.24% of the RADAR NIS points and 94.31% of the LIDAR NIS points between the appropriate 5% and 95% thresholds.
 <img src="./graphics/NIS.png">
 
-The difference between the estimations and ground-truth values are visualized below:
+The difference between the estimations and ground-truth values for dataset 1 are visualized below:
 <img src="./graphics/comparison.png">
 
-As seen above, the UKF does an excellent job of estimating both the object position, velocity and more impressively, the yaw angle which is not measurement directly by either the RADAR or LIDAR. A reasonable but less accurate estimate is obtained for the yaw rate.
+As seen above, the UKF does an excellent job of estimating both the object position, velocity and more impressively, the yaw angle which is not measurement directly by either the RADAR or LIDAR. Additionally, the RMSE values obtained for position and velocity are lower than those of an [Extended Kalman Filter](https://github.com/shazraz/Extended-Kalman-Filter) for the same dataset. This is attributed to the UKF's ability to better handle non-linear motion of the tracked object compared to an EKF as well as the use of the CRTV model as opposed to a constant velocity model used in the EKF. A reasonable but less accurate estimate is obtained for the yaw rate.
