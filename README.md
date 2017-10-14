@@ -42,7 +42,7 @@ Dataset 1             |  Dataset 2
 :-------------------------:|:-------------------------:
 <img src="./graphics/dataset1.png" width="500">  |   <img src="./graphics/dataset2.png" width="500"> 
 
-The estimations, ground truth values and NIS values from the UKF are output into csv files located [here](https://github.com/shazraz/Unscented-Kalman-Filter/tree/master/output) for both datasets. The NIS values are visualized below for the selected std_a = 1 m/s^2 and std_yawdd = 0.3 rad/s^22:
+The estimations, ground truth values and NIS values from the UKF are output into csv files located [here](https://github.com/shazraz/Unscented-Kalman-Filter/tree/master/output) for both datasets. The NIS values are visualized below for the selected std_a = 1 m/s^2 and std_yawdd = 0.3 rad/s^2:
 <img src="./graphics/NIS.png">
 
 The difference between the estimations and ground-truth values are visualized below:
