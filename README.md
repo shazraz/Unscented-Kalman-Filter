@@ -12,7 +12,7 @@ The project was built using the Ubuntu 16-04 bash shell in Windows 10. Instructi
 * gcc/g++ >= 5.4
 * uWebSocketIO (installed via the [install-ubuntu.sh](https://github.com/shazraz/Extended-Kalman-Filter/blob/master/install-ubuntu.sh) script) 
 
-The project consists of the following files located in the [src folder](https://github.com/shazraz/Unscented-Kalman-Filter/tree/master/src) folder:
+The project consists of the following files located in the [src](https://github.com/shazraz/Unscented-Kalman-Filter/tree/master/src) folder:
 
 * [main.cpp](https://github.com/shazraz/Unscented-Kalman-Filter/blob/master/src/main.cpp): Interfaces with the simulator using uWebSocketIO to recieve measurements and transmit estimates and RMSE values output by the UKF. Outputs the ground-truth values,  estimations and NIS values to an output file if specified during runtime.
 * [ukf.cpp](https://github.com/shazraz/Unscented-Kalman-Filter/blob/master/src/ukf.cpp): Instantiates the UKF, initial object state (x), covariance (P) and calls the appropriate Prediction(), UpdateLidar() and UpdateRadar() methods for prediction, LIDAR updates & RADAR updates respectively.
@@ -42,10 +42,10 @@ Dataset 1             |  Dataset 2
 :-------------------------:|:-------------------------:
 <img src="./graphics/dataset1.png" width="500">  |   <img src="./graphics/dataset2.png" width="500"> 
 
-The estimations, ground truth values and NIS values from the UKF are output into csv files located [here](https://github.com/shazraz/Unscented-Kalman-Filter/tree/master/output) for both datasets. The NIS values are visualized below for the selected std_a = 1 m/s^2 and std_yawdd = 0.3 rad/s^2:
+The estimations, ground truth values and NIS values from the UKF are output into csv files located [here](https://github.com/shazraz/Unscented-Kalman-Filter/tree/master/output) for both datasets. The NIS values are visualized below for the selected std_a = 1 m/s^2 and std_yawdd = 0.3 rad/s^2. This choice of values results in 90.24% of the RADAR NIS points and 94.31% of the LIDAR NIS points between the appropriate 5% and 95% thresholds.
 <img src="./graphics/NIS.png">
 
 The difference between the estimations and ground-truth values are visualized below:
 <img src="./graphics/comparison.png">
 
-As seen above, the UKF does an excellent job of estimating both the object position, velocity and more impressively, the yaw angle which is not measurement directly by either the RADAR or LIDAR.
+As seen above, the UKF does an excellent job of estimating both the object position, velocity and more impressively, the yaw angle which is not measurement directly by either the RADAR or LIDAR. A reasonable but less accurate estimate is obtained for the yaw rate.
